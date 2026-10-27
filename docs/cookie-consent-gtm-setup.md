@@ -36,13 +36,14 @@ Consent Mode v2** — the page itself carries only the GTM snippet, no inline co
 - **Tag:** `LightBeam CMP` (from the LightBeam GTM gallery template).
   - **Trigger:** `Consent Initialization – All Pages` (must be this phase, so the
     consent default is set before any other tag evaluates).
-  - **Script source** field:
+  - **Script source** field: copy the exact URL from the LightBeam admin
+    (Deployment section). It has the shape:
     ```
-    https://nbf-cookie-management.s3.us-east-2.amazonaws.com/cookie_consent_6/f3f11018-4cc8-41c4-8be0-dde584041da1/main_32d6808.js?gcm=true&prefCenterOnly=false
+    https://<cmp-host>/cookie_consent_<n>/<domain-id>/main_<hash>.js?gcm=true&prefCenterOnly=false
     ```
-    > This URL comes from the LightBeam admin (Deployment section). `gcm=true` =
-    > Google Consent Mode enabled. If the CMP build is regenerated, this src changes
-    > (`cookie_consent_<n>` / `main_<hash>.js`) — update the tag and re-publish.
+    > `gcm=true` = Google Consent Mode enabled. If the CMP build is regenerated, the
+    > src changes (`cookie_consent_<n>` / `main_<hash>.js`) — paste the new value into
+    > the tag and re-publish.
 
 ## LightBeam admin configuration
 
